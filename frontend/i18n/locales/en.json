@@ -1,0 +1,157 @@
+{
+  "app": {
+    "pageTitle": "{page} · Partner portal"
+  },
+  "common": {
+    "retry": "Retry",
+    "reference": "Reference: {reference}",
+    "unknownDate": "Unknown date",
+    "noValue": "–",
+    "eligible": "Eligible",
+    "notEligible": "Not eligible"
+  },
+  "nav": {
+    "breadcrumb": "Breadcrumb",
+    "allCampaigns": "All campaigns"
+  },
+  "pagination": {
+    "report": "{first}–{last} of {total}"
+  },
+  "status": {
+    "pending": "Pending review",
+    "shortlisted": "Shortlisted",
+    "rejected": "Rejected"
+  },
+  "tier": {
+    "top": "Top match",
+    "strong": "Strong match",
+    "review": "Needs review"
+  },
+  "campaigns": {
+    "pageTitle": "Campaigns",
+    "title": "Campaigns",
+    "subtitle": "Choose a campaign to review its applicants.",
+    "loading": "Loading campaigns",
+    "loadError": "Could not load campaigns.",
+    "empty": "You have no campaigns yet.",
+    "created": "Created {date}",
+    "open": "Open {name}",
+    "columns": {
+      "campaign": "Campaign",
+      "applicants": "Applicants",
+      "eligible": "Eligible",
+      "averageScore": "Avg AI score",
+      "progress": "Review progress"
+    },
+    "progress": {
+      "pending": "{count} pending",
+      "shortlisted": "{count} shortlisted",
+      "rejected": "{count} rejected"
+    }
+  },
+  "review": {
+    "pageTitle": "Applicants",
+    "boardTitle": "{campaign} applicants",
+    "campaignFallback": "Campaign",
+    "loading": "Loading applicants",
+    "loadError": "Could not load applicants. Please try again.",
+    "matching": "{count} applicant matches the current filters. | {count} applicants match the current filters.",
+    "summary": {
+      "applicants": "Applicants",
+      "eligible": "Eligible",
+      "averageScore": "Avg AI score",
+      "topTier": "Top tier",
+      "topTierFrom": "Top tier ({score}+)",
+      "viewAll": "View all",
+      "noneYet": "None yet"
+    },
+    "filters": {
+      "region": "Filter and sort applicants",
+      "heading": "Filters:",
+      "minScore": "Minimum score",
+      "appliedDate": "Application date",
+      "status": "Status",
+      "clear": "Clear",
+      "sortBy": "Sort by"
+    },
+    "sort": {
+      "-aiScore": "Score: high to low",
+      "aiScore": "Score: low to high",
+      "-appliedAt": "Newest applications",
+      "appliedAt": "Oldest applications",
+      "name": "Last name: A to Z",
+      "-name": "Last name: Z to A"
+    },
+    "empty": {
+      "title": "No applicants match these filters",
+      "filteredHint": "Try lowering the minimum score, widening the date range or clearing the status filter.",
+      "noApplicants": "This campaign has no applicants yet.",
+      "reset": "Reset filters"
+    },
+    "details": {
+      "score": "AI score {score}"
+    },
+    "topTier": {
+      "title": "Top tier applicants",
+      "intro": "{count} applicant scored {score} or higher. | {count} applicants scored {score} or higher.",
+      "showingTop": "Showing the top {count}.",
+      "showAll": "Show all {count} in the list"
+    },
+    "statusError": {
+      "summary": "Couldn't do the operation",
+      "detail": "Could not {action} {name}. {message}",
+      "reverted": "The change was reverted.",
+      "unknownApplicant": "This applicant",
+      "action": {
+        "shortlisted": "shortlist",
+        "rejected": "reject",
+        "pending": "move to pending"
+      }
+    }
+  },
+  "card": {
+    "standout": "Standout · above {score}",
+    "applied": "Applied",
+    "notEligible": "· Not eligible",
+    "scoreForScreenReaders": "out of 100, {tier}",
+    "highlights": "AI evaluation highlights",
+    "noHighlights": "No AI highlights yet.",
+    "decisionGroup": "Review decision for {name}",
+    "actionFor": "{action} {name}",
+    "action": {
+      "shortlisted": "Shortlist",
+      "rejected": "Reject",
+      "pending": "Pending"
+    },
+    "viewDetails": "View details",
+    "viewDetailsFor": "View details for {name}"
+  },
+  "errorPage": {
+    "pageTitle": "Page not accessible",
+    "eyebrow": "Page not accessible",
+    "code": "Error {status}",
+    "back": "Back to campaigns",
+    "reason": {
+      "invalid-id": {
+        "title": "This link is not valid",
+        "body": "The campaign address is not in the expected format. Check the link you followed, or open the campaign from your campaign list."
+      },
+      "unauthorized": {
+        "title": "You don't have access",
+        "body": "Your session is missing, has expired, or does not allow this campaign. Sign in again with a partner account that owns it."
+      },
+      "not-found": {
+        "title": "Campaign not found",
+        "body": "This campaign doesn't exist or isn't shared with your organisation."
+      },
+      "unavailable": {
+        "title": "Campaign service unavailable",
+        "body": "We could not check access to this campaign right now. Please try again in a moment."
+      },
+      "other": {
+        "title": "Something went wrong",
+        "body": "An unexpected error occurred while loading this page."
+      }
+    }
+  }
+}
