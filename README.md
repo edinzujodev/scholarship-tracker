@@ -1,12 +1,50 @@
-# ScholarshipOwl test 
+# Scholarship Tracker
 
+A B2B partner portal for reviewing scholarship applicants. Partner organisations run scholarship campaigns; for each campaign they see summary metrics and a list of applicants ranked by an AI match score, and shortlist or reject them.
 
+Built as a full-stack practical task for ScholarshipOwl: a Laravel JSON:API backend and a Nuxt frontend, both fully tested.
+
+## Features
+
+- **Campaign list**: each partner sees only their own campaigns, with application counts, eligible counts, per-status counts and the average AI score.
+- **Applicant summary per campaign**: totals, eligible count, average score and top-tier highlights, plus a filtered, sorted, paginated list of applicants.
+- **Review actions**: Shortlist, Reject or move back to Pending, with optimistic UI updates that roll back if the API refuses.
+- **Filters and sorting**: minimum score slider, status, application date range, sort by score, date or name, page size.
+- **Applicant cards** with name, colour-coded score, application date and AI-generated highlights; loading skeletons and empty states.
+- **Tenant isolation**: one partner can never see or change another partner's data. Foreign ids return the same 404 as unknown ones.
+- **Strict JSON:API**: validated input at every layer, JSON:API error objects, content negotiation (415/406).
+- **Security**: partner token kept server-side behind a Nuxt backend-for-frontend, nonce-based Content-Security-Policy, applicant names and emails encrypted at rest (Google Cloud KMS), append-only audit log of review decisions.
+- **Observability**: one `X-Request-Id` traced from the browser through Nuxt and Laravel to the database, with redacted JSON logs.
+
+## Tech stack
 
 ```
 backend/        Laravel 13 · PHP 8.2+ · Doctrine ORM 3 · PHPUnit
-frontend/       Nuxt 4 · Vue 3 · Pinia · PrimeVue 5 · Tailwind 4 · Vitest · Playwright
-TASK_REPORT.md  Tasks 1-4: Notes, arhitecture and task 4
+frontend/       Nuxt 4 · Vue 3 · Pinia · PrimeVue 5 · Tailwind 4 · TypeScript · Vitest · Playwright
+TASK_REPORT.md  Design notes, architecture, AI tooling write-up and the incident/architecture task
 ```
+
+## Quick start
+
+```bash
+# Backend: API on http://127.0.0.1:8000
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite
+php artisan doctrine:schema:create
+php artisan db:seed
+php artisan serve
+
+# Frontend: portal on http://localhost:3000 (in a second terminal)
+cd frontend
+npm install
+cp .env.example .env
+NUXT_BACKEND_URL=http://127.0.0.1:8000 npm run dev
+```
+
+The frontend also runs on its own with `npm run dev`, using a built-in mock API. The full setup, test commands and API examples are below; the design decisions and architecture are in [TASK_REPORT.md](TASK_REPORT.md).
 
 ## Prerequisites
 
